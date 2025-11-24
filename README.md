@@ -1,40 +1,55 @@
 # UD Block: Accordion Filter Container
 
 Ein WordPress-Block, der als Container für mehrere UD-Accordion-Blöcke dient und deren Anzeige dynamisch anhand von Filter-Interaktionen steuert.
-Der Block erweitert bestehende Filtermechanismen um ein optionales, zusätzliches Verhalten für Accordions, ohne das ursprüngliche System zu ersetzen.
+Der Block erweitert bestehende Filtermechanismen um ein optionales, zusätzliches Verhalten für Accordions.
+
+## Einordnung des Systems
+
+Der Accordion Filter Container ist ein **empfangendes System**.
+Er empfängt externe Filter-Signale (z. B. Buttons, Kategorien, Attribut-Filter) und reagiert darauf.
+Er sendet selbst keine Filter-Signale nach aussen und ersetzt keine bestehende Filterlogik.
+Er dient ausschliesslich der Erweiterung und reagiert auf das, was das bestehende Filtersystem vorgibt.
 
 ## Funktionen
-- Container-Block für mehrere ud/accordion-block-Instanzen
+
+- Container-Block für mehrere `ud/accordion-block`-Instanzen
 - Reagiert auf externe Filter-Trigger (z. B. Buttons, Kategorien, Attribute)
-- Zusätzliche Klasse .ud-accordion-filter-active für erweitertes Verhalten
+- Zusätzliche Klasse `.ud-accordion-filter-active` für erweitertes Verhalten
 - Geschlossene Accordions können optional klickbar werden, wenn der Filtermodus aktiv ist
 - Nahtlose Erweiterung des bestehenden Filter-Systems (keine Ablösung)
-- Frontend-Optimierung über frontend.js und frontend.css
+- Frontend-Optimierung über `frontend.js` und `frontend.css`
 - Editor-Darstellung mit Hinweisen und Container-Styling
 
 ## Technische Details
+
 ### Block-Definition
-Der Block wird über block.json registriert und bindet eigene Editor- und Frontend-Dateien ein.
+
+Der Block wird über `block.json` registriert und bindet eigene Editor- und Frontend-Dateien ein.
 
 ### Wesentliche Dateien
-- block.json – Block-Definition (Name, Scripts, Styles, Meta)
-- index.js – Editor-Logik
-- style.css – Editor-Styles
-- frontend.js – Filter-Erweiterung für Accordions
-- frontend.css – Frontend-Styles für Filter-Ausblendungen und Übergänge
+
+- **block.json** – Block-Definition (Name, Scripts, Styles, Meta)
+- **index.js** – Editor-Logik
+- **style.css** – Editor-Styles
+- **frontend.js** – Filter-Erweiterung für Accordions
+- **frontend.css** – Frontend-Styles für Filter-Ausblendungen und Übergänge
 
 ### Relevante CSS-Klassen
-- .accordion-block-container – Grundcontainer
-- .ud-accordion-filter-active – aktiviert erweitertes Klickverhalten
-- .wp-block-ud-accordion-block.is-filtered-out – ausgeblendete Accordions
+
+- `.accordion-block-container` – Grundcontainer
+- `.ud-accordion-filter-active` – aktiviert erweitertes Klickverhalten
+- `.wp-block-ud-accordion-block.is-filtered-out` – ausgeblendete Accordions
 
 ### Verhalten im Frontend
-- Bei aktivem Filtermodus kann der Container automatisch alle geschlossenen Accordions mit cursor: pointer markieren.
-- Accordions, die nicht den Filterkriterien entsprechen, werden ausgeblendet (Opacity 0, kein Layout-Platz, keine Pointer-Events).
+
+- Bei aktivem Filtermodus kann der Container automatisch alle geschlossenen Accordions mit `cursor: pointer` markieren.
+- Accordions, die nicht den Filterkriterien entsprechen, werden ausgeblendet
+  (Opacity 0, kein Layout-Platz, keine Pointer-Events).
 - Verschachtelte Accordions bleiben funktionsfähig.
 
 ### Beispiel (vereinfachtes Markup)
-```
+
+```html
 <div class="accordion-block-container ud-accordion-filter-active">
     <div class="wp-block-ud-accordion-block">
         …
@@ -61,5 +76,5 @@ Der Block wird über block.json registriert und bindet eigene Editor- und Fronte
 
 ## Lizenz
 
-GPL v2 or later  
+GPL v2 or later
 https://www.gnu.org/licenses/gpl-2.0.html

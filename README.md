@@ -1,18 +1,40 @@
 # UD Block: Accordion Filter Container
 
-Ein WordPress-Block, der als Container für mehrere UD-Accordion-Blöcke dient und deren Anzeige dynamisch anhand von Filter-Interaktionen steuert.
+Ein WordPress-Block, der als Container für mehrere UD-Accordion-Blöcke dient und deren Anzeige dynamisch anhand von Filter-Interaktionen steuert.  
 Der Block erweitert bestehende Filtermechanismen um ein optionales, zusätzliches Verhalten für Accordions.
-
 
 ## Funktionen
 
-- Container-Block für mehrere `ud/accordion-block`-Instanzen
-- Reagiert auf externe Filter-Trigger (z. B. Buttons, Kategorien, Attribute)
-- Zusätzliche Klasse `.ud-accordion-filter-active` für erweitertes Verhalten
-- Geschlossene Accordions können optional klickbar werden, wenn der Filtermodus aktiv ist
-- Nahtlose Erweiterung des bestehenden Filter-Systems (keine Ablösung)
-- Frontend-Optimierung über `frontend.js` und `frontend.css`
-- Editor-Darstellung mit Hinweisen und Container-Styling
+- Container-Block für mehrere `ud/accordion-block`-Instanzen  
+- Reagiert auf externe Filter-Trigger (z. B. Buttons, Kategorien, Attribute)  
+- Zusätzliche Klasse `.ud-accordion-filter-active` für erweitertes Verhalten  
+- Geschlossene Accordions können optional klickbar werden, wenn der Filtermodus aktiv ist  
+- Frontend-Optimierung über `frontend.js` und `frontend.css`  
+- Editor-Darstellung mit Hinweisen und Container-Styling  
+
+## Empfangen und Verarbeiten von Filtern (wichtig)
+
+Der Accordion Filter Container ist ein **rein empfangendes System**.  
+Er reagiert ausschließlich auf Filterinformationen, die **von außen** bereitgestellt werden.
+
+Der Block kann **folgende Eingaben empfangen und verarbeiten**:
+
+1. **Aktive Filterwerte aus `.filter-button-group`**  
+   - Empfangen über das Attribut `data-current-filter`  
+   - Beispiele: Kategorie, Typ, Tag, Gruppenzugehörigkeit  
+   - Werte wie `"*"` (= keine Filterung) werden berücksichtigt  
+
+2. **Tags der einzelnen Accordions**  
+   - Empfangen über DOM-Attribute wie `data-tags` oder `data-category`  
+   - Diese Werte bestimmen, ob ein Accordion zum aktiven Filter passt  
+
+Anhand dieser beiden Quellen entscheidet der Container:  
+- Welche Accordions sichtbar bleiben  
+- Welche ausgeblendet werden  
+- Welche klickbar markiert werden  
+
+Der Block **sendet selbst keine Filterdaten zurück** und ersetzt kein anderes Filtersystem.  
+Er erweitert ausschließlich die bereits vorhandene Logik.
 
 
 ## Screenshots

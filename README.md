@@ -3,12 +3,6 @@
 Ein WordPress-Block, der als Container für mehrere UD-Accordion-Blöcke dient und deren Anzeige dynamisch anhand von Filter-Interaktionen steuert.
 Der Block erweitert bestehende Filtermechanismen um ein optionales, zusätzliches Verhalten für Accordions.
 
-## Einordnung des Systems
-
-Der Accordion Filter Container ist ein **empfangendes System**.
-Er empfängt externe Filter-Signale (z. B. Buttons, Kategorien, Attribut-Filter) und reagiert darauf.
-Er sendet selbst keine Filter-Signale nach aussen und ersetzt keine bestehende Filterlogik.
-Er dient ausschliesslich der Erweiterung und reagiert auf das, was das bestehende Filtersystem vorgibt.
 
 ## Funktionen
 
@@ -19,6 +13,7 @@ Er dient ausschliesslich der Erweiterung und reagiert auf das, was das bestehend
 - Nahtlose Erweiterung des bestehenden Filter-Systems (keine Ablösung)
 - Frontend-Optimierung über `frontend.js` und `frontend.css`
 - Editor-Darstellung mit Hinweisen und Container-Styling
+
 
 ## Screenshots
 ![Accordion Filter Container Schema](./assets/ud_accordion_filter_container_block.png)
@@ -37,6 +32,13 @@ Die Abbildung zeigt den Aufbau des Accordion Filter Containers:
    Jede Box ist ein einzelner `ud/accordion-block`.
    Der Container blendet nicht passende Blöcke aus oder markiert sie als klickbar, abhängig vom aktiven Filter.
 
+
+## Einordnung des Systems
+
+Der Accordion Filter Container ist ein **empfangendes System**.
+Er empfängt externe Filter-Signale (z. B. Buttons, Kategorien, Attribut-Filter) und reagiert darauf.
+Er sendet selbst keine Filter-Signale nach aussen und ersetzt keine bestehende Filterlogik.
+Er dient ausschliesslich der Erweiterung und reagiert auf das, was das bestehende Filtersystem vorgibt.
 
 
 ## Technische Details

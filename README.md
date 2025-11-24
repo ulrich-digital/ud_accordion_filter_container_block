@@ -20,6 +20,13 @@ Er dient ausschliesslich der Erweiterung und reagiert auf das, was das bestehend
 - Frontend-Optimierung über `frontend.js` und `frontend.css`
 - Editor-Darstellung mit Hinweisen und Container-Styling
 
+## Screenshots
+![Accordion Filter Container Schema](./assets/ud_accordion_filter_container_block.png)
+Die Grafik zeigt:
+- **Oben:** Externe Filter, welche die Anzeige steuern.  
+- **Unten:** Der Accordion Filter Container mit mehreren farblich gruppierten Accordion-Blöcken.  
+- **Funktion:** Der Container empfängt die aktiven Filter und blendet nicht passende Accordions aus.
+
 ## Technische Details
 
 ### Block-Definition

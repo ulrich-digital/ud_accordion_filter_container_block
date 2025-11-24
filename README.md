@@ -22,10 +22,22 @@ Er dient ausschliesslich der Erweiterung und reagiert auf das, was das bestehend
 
 ## Screenshots
 ![Accordion Filter Container Schema](./assets/ud_accordion_filter_container_block.png)
-Die Grafik zeigt:
-- **Oben:** Externe Filter, welche die Anzeige steuern.  
-- **Unten:** Der Accordion Filter Container mit mehreren farblich gruppierten Accordion-Blöcken.  
-- **Funktion:** Der Container empfängt die aktiven Filter und blendet nicht passende Accordions aus.
+Die Abbildung zeigt den Aufbau des Accordion Filter Containers:
+
+1. **Obere Reihe – Filterelemente**
+   Externe Filter (z. B. Kategorien oder Attribute) steuern, welche Accordions sichtbar bleiben.
+   Jeder Filter ist farblich hervorgehoben und repräsentiert eine aktive oder inaktive Auswahl.
+
+2. **Grosser Container (gestrichelte Linie)**
+   Dieser Bereich stellt den eigentlichen *Accordion Filter Container* dar.
+   Er nimmt alle untergeordneten Accordion-Blöcke auf und reagiert auf Filter-Signale.
+
+3. **Accordion-Gruppen (3 Spalten)**
+   Farbliche Spalten repräsentieren Kategorien oder Filtergruppen.
+   Jede Box ist ein einzelner `ud/accordion-block`.
+   Der Container blendet nicht passende Blöcke aus oder markiert sie als klickbar, abhängig vom aktiven Filter.
+
+
 
 ## Technische Details
 

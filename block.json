@@ -1,0 +1,15 @@
+{
+    "apiVersion": 2,
+    "name": "ud/ud-accordion-filter-container-block",
+    "title": "Accordion Filter Container",
+    "category": "widgets",
+    "icon": "list-view",
+    "description": "Container for accordion blocks that responds to filter changes.",
+    "supports": {
+        "html": false
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./style.css",
+    "viewScript": "file:./frontend.js",
+"style": "file:./frontend.css"
+}

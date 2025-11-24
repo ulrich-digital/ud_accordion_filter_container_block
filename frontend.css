@@ -1,0 +1,13 @@
+.accordion-block-container{
+	margin-top: 1rem;
+    margin-bottom: 1rem;
+	}
+
+.wp-block-ud-accordion-block.is-filtered-out {
+	opacity: 0;
+	pointer-events: none;
+	height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden;
+}

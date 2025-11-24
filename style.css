@@ -1,0 +1,19 @@
+.accordion-block-container {
+	padding: 1rem;
+	border: 0px dashed #ccc;
+	border-radius: 16px;
+	background-color: #ffffff;
+	margin: 1rem 0;
+}
+
+.accordion-block-container .accordion-editor-hint {
+	font-size: 0.75rem;
+	opacity: 0.5;
+	font-style: italic;
+}
+
+
+.accordion-block-container.ud-accordion-filter-active 
+    > .wp-block-ud-accordion-block:not(.is-open) {
+    cursor: pointer;
+}
